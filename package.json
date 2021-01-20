@@ -1,6 +1,6 @@
 {
   "name": "postcss-insert",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A postcss plugin that inserts one css classes properties into another, like Sass @extend...only better",
   "keywords": [
     "postcss",
@@ -13,9 +13,9 @@
     "extend",
     "sass-extend"
   ],
-  "author": "Joe Cianflone <joe@cianflone.co>",
+  "author": "Perceval Faramaz <perceval@faramaz.com>; Joe Cianflone <joe@cianflone.co>",
   "license": "MIT",
-  "repository": "JoeCianflone/postcss-insert",
+  "repository": "perfaram/postcss-insert",
   "bugs": {
     "url": "https://github.com/JoeCianflone/postcss-insert/issues"
   },
