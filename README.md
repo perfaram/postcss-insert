@@ -173,11 +173,15 @@ Output:
 
 
 .foo {
+  @media (min-width: 400px) {
     color: green;
     font-size: 22px !important;
     border: 1px solid red;
+  }
 }
 ```
+
+Yes, you read that right. It copies the media query *inside* the ruleset, _which is not valid CSS_. You'll have to use another PostCSS plugin such as [`nested`](https://github.com/postcss/postcss-nested) to de-nest the media query.
 
 ## General Plugin Usage
 
@@ -188,6 +192,8 @@ Output:
 
 ### Recommendation
 
-I recommend that this plugin run last in your PostCSS stack. If you're doing any sort of transforms where a class doesn't exist `@insert` would fail because it can't find the class. If you run this last (or second-to-last right before something like mqpacker) you'll ensure that all classes are there and ready to go. I may eventually add some sort of silent fail option if it can't find a class, but right now that is not the case. Happy coding!
+I recommend that this plugin run second-to-last in your PostCSS stack. If you're doing any sort of transforms where a class doesn't exist `@insert` would fail because it can't find the class. If you run this second-to-last (or third-to-last, right before something like cssnano) you'll ensure that all classes are there and ready to go. I may eventually add some sort of silent fail option if it can't find a class, but right now that is not the case. Happy coding!
+
+I say "second-to-last" because of the specificity with media queries (see above).
 
 See [PostCSS] docs for examples for your environment.
